@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TacGia extends Model
 {
+    public $timestamps = true;
     use HasFactory; 
     protected $table = 'tacgia';
     protected $fillable = [

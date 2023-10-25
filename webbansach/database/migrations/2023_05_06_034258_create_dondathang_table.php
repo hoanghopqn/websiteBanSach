@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('thangthai');
             $table->float('tongtien', 8, 2);
             $table->date('thoigiandat');
-            
+            $table->timestamps();
         });
     }
 

@@ -44,7 +44,7 @@ class DSTaiKhoanRepository
         if ($dstaikhoan) {
             return response()->json([
                 "status" => 200,
-                "message" => "Giammr Giá create successfully.",
+                "message" => "Giảm Giá create successfully.",
             ], 200);
         } else {
             return response()->json([

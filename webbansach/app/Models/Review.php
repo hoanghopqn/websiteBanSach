@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    public $timestamps = true;
     use HasFactory; 
     protected $table = 'review';
     protected $fillable = [

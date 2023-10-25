@@ -2,13 +2,13 @@ import React from "react";
 import Slider from "react-slick";
 import "./style.scss";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { Link, useNavigate } from "react-router-dom";
 import CardBook from "../../CardBook";
 import "./style.scss";
 
 function OnSale(props) {
-    const { saleBooks } = props; 
+    const { saleBooks } = props;
     let navigate = useNavigate();
     let settings = {
         dots: false,
@@ -18,7 +18,7 @@ function OnSale(props) {
         slidesToScroll: 4,
     };
     const handleToPage = () => {
-        let path = `/shop`; 
+        let path = `/shop`;
         navigate(path);
     }
     const slides = saleBooks.map((book, index) => {
@@ -31,10 +31,10 @@ function OnSale(props) {
     return (
         <div className="Banner">
             <div className="Banner-Container">
-                <div className="Banner-header">
+                <div className="Banner-header d-flex justify-content-between">
                     <span className="Banner-title">On Sale</span>
-                    <div className="Banner-btn"> 
-                            <button onClick={handleToPage}>viewAll</button> 
+                    <div className="Banner-btn">
+                        <button className="btn btn-info" onClick={handleToPage}>View all</button>
                     </div>
                 </div>
 

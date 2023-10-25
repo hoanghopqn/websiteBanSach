@@ -20,6 +20,7 @@ return new class extends Migration
             ->references('masp')->on('sanpham')->onUpdate('cascade');
             $table->date('ngayapdung');
             $table->float('giamoi', 8, 2);
+            $table->timestamps();
         });
     }
 

@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ctddh', function (Blueprint $table) { 
-    $table->string('masp',50);
-    $table->foreign('masp')
-          ->references('masp')->on('sanpham')->onUpdate('cascade'); 
-    $table->foreignId('ddh_id')->constrained('dondathang')->onUpdate('cascade');
-    $table->integer('soluong');
-    $table->float('dongia', 8, 2);
+        Schema::create('ctddh', function (Blueprint $table) {
+            $table->string('masp', 50);
+            $table->foreign('masp')
+                ->references('masp')->on('sanpham')->onUpdate('cascade');
+            $table->foreignId('ddh_id')->constrained('dondathang')->onUpdate('cascade');
+            $table->integer('soluong');
+            $table->float('dongia', 8, 2);
+            $table->timestamps();
         });
     }
 

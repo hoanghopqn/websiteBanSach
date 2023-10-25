@@ -14,14 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sanpham', function (Blueprint $table) {
-            $table->string('masp',50)->unique()->primary(); 
-            $table->string('tensp',50);
+            $table->string('masp', 50)->unique()->primary();
+            $table->string('tensp', 50);
             $table->foreignId('loaisanpham_id')->constrained('loaisanpham')->onUpdate('cascade');
             $table->text('mota');
             $table->float('gia', 8, 2);
             $table->integer('soluongton');
             $table->string('hinhanh', 100)->nullable();
             $table->integer('thangthaisp');
+            $table->timestamps();
         });
     }
 

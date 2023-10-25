@@ -18,6 +18,7 @@ return new class extends Migration
             $table->tinyText('tentacgia');
             $table->text('tieusu')->nullable();
             $table->foreignId('nuoc_id')->constrained('nuocxuatban')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

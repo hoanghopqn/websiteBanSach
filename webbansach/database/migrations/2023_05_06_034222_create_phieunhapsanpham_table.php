@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('nhanvien_id')->constrained('nhanvien')->onUpdate('cascade');
             $table->date('ngaynhap');
             $table->float('tongtien', 8, 2);
+            $table->timestamps();
         });
     }
 

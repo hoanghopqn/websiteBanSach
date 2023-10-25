@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('loaisanpham', function (Blueprint $table) {
             $table->id();
             $table->string('tenloaisp',50)->unique(); 
+            $table->timestamps();
         });
     }
 

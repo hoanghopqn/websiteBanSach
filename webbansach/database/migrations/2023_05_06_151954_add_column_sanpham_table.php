@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('sanpham', function (Blueprint $table) {
             $table->foreignId('tacgia_id')->constrained('tacgia')->onUpdate('cascade');
             $table->foreignId('nuoc_id')->constrained('nuocxuatban')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

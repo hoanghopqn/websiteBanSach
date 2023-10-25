@@ -12,9 +12,9 @@ function Home() {
     const [featuredBooks, setFeaturedBooks] = useState([]);
     const [SalesBooks, setSalesBooks] = useState([]);
     const [apiUrl, setApiUrl] = useState('get-recommend')
-    
-  const listUserDDHLink = useSelector((state) => state.sanpham);    
-  console.log(listUserDDHLink)
+
+    const listUserDDHLink = useSelector((state) => state.sanpham);
+    console.log(listUserDDHLink)
     const handleFilterBook = (apiUrl) => {
         setApiUrl(apiUrl);
     }
@@ -24,19 +24,19 @@ function Home() {
             const result = await sanphamServices.getListSanPham(apiUrl);
             setFeaturedBooks(result.sanpham.data)
         }
-        getFeaturedBooks() 
-    }, [apiUrl]); 
-    useEffect(() => { 
+        getFeaturedBooks()
+    }, [apiUrl]);
+    useEffect(() => {
         const getSaleBooks = async () => {
             const result = await sanphamServices.getListSanPham('get-sanpham-sale');
             setSalesBooks(result.sanpham.data)
         }
         getSaleBooks()
-    }, []); 
+    }, []);
     return (
         <>
-        <OnSale 
-                saleBooks={SalesBooks}/>
+            <OnSale
+                saleBooks={SalesBooks} />
             <FeaturedBook
                 featuredBooks={featuredBooks}
                 onFilterBook={handleFilterBook}
