@@ -1,7 +1,7 @@
 import React from "react"; 
 import './style.scss'
 import {AiOutlineUser} from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function User({handleClick,handleBlur,Hide}) {
      
@@ -33,7 +33,7 @@ function User({handleClick,handleBlur,Hide}) {
         { user?
         <li name='user' onMouseMove={()=>handleClick('user')} onMouseOut={()=>handleBlur('user')} > 
                 <div className='icon-action'><AiOutlineUser /> </div>
-                <div className='text-action'><a href=''>{user.taikhoan}</a></div>
+                <div className='text-action'><Link to=''>{user.taikhoan}</Link></div>
                 <div className='page-user' style={Hide.user?{display:'none'}:{display:'block'}}>
                   <div className='user-menu'>  <button className='user-button user-login' onClick={handleToDetailKH}>Thông tin Cá Nhân</button></div>
                   <div className='user-menu'>  <button className='user-button user-login' onClick={handleToDMk}>Đổi mật khẩu</button></div>
@@ -43,7 +43,7 @@ function User({handleClick,handleBlur,Hide}) {
                   :
         <li name='user' onMouseMove={()=>handleClick('user')} onMouseOut={()=>handleBlur('user')} > 
                 <div  onClick={handleToLogin} className='icon-action'><AiOutlineUser /> </div>
-                <div  onClick={handleToLogin}  className='text-action'><a href=''>{Hide.Country==='VN'?'Login':'Account'}</a></div>
+                <div  onClick={handleToLogin}  className='text-action'><Link to=''>{Hide.Country==='VN'?'Login':'Account'}</Link></div>
                 <div className='page-user' style={Hide.user?{display:'none'}:{display:'block'}}>
                   <div className='user-menu'>  <button className='user-button user-login' onClick={handleToLogin}>Login</button></div>
                   <div className='user-menu'>  <button className='user-button user-register' onClick={handleToRegister}>Register</button></div>

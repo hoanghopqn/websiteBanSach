@@ -15,7 +15,7 @@ function Cart({handleClick,handleBlur,Hide}) {
     return (
         <li onMouseMove={()=>handleClick('bell')} onMouseOut={()=>handleBlur('bell')}>
             <Link to='/cart'>    <div className='icon-action'><AiOutlineShoppingCart /> </div>
-                <div className='text-action'><a href=''>{Hide.Country==='VN'?'Giỏ Hàng':'My Cart'}</a></div></Link>
+                <div className='text-action'><Link to=''>{Hide.Country==='VN'?'Giỏ Hàng':'My Cart'}</Link></div></Link>
                 <div className='page-Cart' style={Hide.bell?{display:'none'}:{display:'block'}}>
                     <div className="product">
              {cart?cart.map((cart, index) => {
