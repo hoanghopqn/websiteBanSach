@@ -24,11 +24,11 @@ export default function Pagination({ getFilterLimit, getFilterPage, meta }) {
   const dispatch = useDispatch();
   return (
     <div className='paginate'>
-      <a className='magrin-eve'>Trang: {current_page} of {last_page}</a>
+      <p className='magrin-eve'>Trang: {current_page} of {last_page}</p>
       <div className='magrin-eve'>
         <SortFilter options={options} setFilter={getFilterLimit} />
       </div>
-      <a className='magrin-eve'>{from} to {to} of {total}</a>
+      <p className='magrin-eve'>{from} to {to} of {total}</p>
       <Button className='magrin-eve' onClick={handleLeft}><BsChevronLeft /></Button>
       <Button className='magrin-eve' onClick={handleRight}><BsChevronRight /></Button>
     </div>

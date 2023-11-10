@@ -8,16 +8,15 @@ import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
-import {   getFilterLimit } from '../../Actions/sanphamActions';
+import { getFilterLimit } from '../../Actions/sanphamActions';
 import { useDispatch } from 'react-redux';
 
 export default function SortFilter(props) {
- const {options,setFilter}=props;
- const dispatch =useDispatch();
+  const { options, setFilter } = props;
+  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
- 
 
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -41,7 +40,7 @@ export default function SortFilter(props) {
     <React.Fragment>
       <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
         <Button>{options[selectedIndex]}</Button>
-        <Button 
+        <Button
           onClick={handleToggle}
         >
           <ArrowDropDownIcon />
@@ -70,11 +69,11 @@ export default function SortFilter(props) {
                 <MenuList id="split-button-menu" autoFocusItem>
                   {options.map((option, index) => (
                     <MenuItem
-                      key={option} 
+                      key={option}
                       selected={index === selectedIndex}
                       onClick={(event) => handleMenuItemClick(event, index)}
                     >
-                     {option}
+                      {option}
                     </MenuItem>
                   ))}
                 </MenuList>

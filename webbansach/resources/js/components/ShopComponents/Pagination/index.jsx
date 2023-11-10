@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Pagination from '@mui/material/Pagination'; 
+import Pagination from '@mui/material/Pagination';
 
 export default function ShopPagination() {
-  return ( 
+  return (
     <Pagination count={10} />
   );
 }

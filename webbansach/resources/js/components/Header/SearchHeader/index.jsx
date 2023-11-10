@@ -24,11 +24,11 @@ function SearchHeader({ handleClick, handleBlur, Hide }) {
                         return (
                             <div key={index} className="cart-product">
                                 <img alt="product-image" src={`/images/${sach.hinhanh}.jpg`} />
-                                <a>{sach.tensp}</a>
-                                <a>Thể Loại: {sach.tenloaisp}</a>
-                                <a>Tác Giả: {sach.tentacgia}</a>
-                                <a>NuocwsXB: {sach.tennuoc}</a>
-                                <a className="gia">{sach.gia}</a>
+                                <p>{sach.tensp}</p>
+                                <p>Thể Loại: {sach.tenloaisp}</p>
+                                <p>Tác Giả: {sach.tentacgia}</p>
+                                <p>NuocwsXB: {sach.tennuoc}</p>
+                                <p className="gia">{sach.gia}</p>
                             </div>
                         );
                     })

@@ -1,10 +1,16 @@
-.shop {
+.shop-container {
     display: flex;
-    justify-content: center;
-    .content {
-        a {
-            font-size: 30px;
-        }
+
+    .filter-wrapper {
+        min-width: 200px;
+        width: 20%;
+        max-width: 300px;
+        border-right: 1px solid #9c949444
+    }
+
+    .content-section {
+        flex: 1;
+
         .sort-filter {
             margin-left: 100px;
             margin-right: 100px;

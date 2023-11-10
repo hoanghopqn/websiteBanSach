@@ -1,15 +1,19 @@
 .checkradio {
     margin-left: 20px;
-    Button {
+
+    button {
         padding: 0px 0.1px;
         text-align: end;
         background-color: white;
         margin-right: 5px;
+        border: 1px solid black;
+
         .icon {
             margin-top: 0.5px;
             font-size: 15px;
             color: white;
         }
+
         .coloricon {
             color: black;
         }

@@ -24,8 +24,8 @@ function Cart({ handleClick, handleBlur, Hide }) {
                         return (
                             <div key={index} className="cart-product">
                                 <img alt="product-image" src={`/images/${cart.hinhanh}.jpg`} />
-                                <a>{cart.tensp}</a>
-                                <a className="gia">{cart.gia}</a>
+                                <p>{cart.tensp}</p>
+                                <p className="gia">{cart.gia}</p>
                             </div>
                         );
                     })
