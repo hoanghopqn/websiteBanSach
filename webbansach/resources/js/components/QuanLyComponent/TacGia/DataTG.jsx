@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 
 const DataTG = ({ tacgia, handleEditClick, handleDeleteClick }) => {
- 
+
   return (
     <tr>
       <td scope="row">
@@ -15,16 +15,16 @@ const DataTG = ({ tacgia, handleEditClick, handleDeleteClick }) => {
         {tacgia.tieusu}
       </td>
       <td>
-        {tacgia.tennuoc }
-      </td> 
+        {tacgia.tennuoc}
+      </td>
       <td>
-        <button
+        <button className="btn btn-info"
           type="button"
           onClick={(event) => handleEditClick(event, tacgia)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(tacgia.id)}>
+        <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(tacgia.id)}>
           <AiOutlineDelete />
         </button>
       </td>

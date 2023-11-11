@@ -18,13 +18,13 @@ const DataPN = ({ phieunhap, handleEditClick, handleDeleteClick }) => {
         {phieunhap.tongtien}
       </td>
       <td>
-        <button
+        <button className="btn btn-info"
           type="button"
           onClick={(event) => handleEditClick(event, phieunhap)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(phieunhap.maphieunhap)}>
+        <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(phieunhap.maphieunhap)}>
           <AiOutlineDelete />
         </button>
       </td>

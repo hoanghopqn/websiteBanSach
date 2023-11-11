@@ -27,14 +27,14 @@ const DataGG = ({ giamgia, handleEditClick, handleDeleteClick }) => {
       <td>
         {giamgia.phantram}
       </td>
-      <td> 
-        <button
+      <td>
+        <button className="btn btn-info"
           type="button"
           onClick={(event) => handleEditClick(event, giamgia)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(giamgia.madot)}>
+        <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(giamgia.madot)}>
           <AiOutlineDelete />
         </button>
       </td>

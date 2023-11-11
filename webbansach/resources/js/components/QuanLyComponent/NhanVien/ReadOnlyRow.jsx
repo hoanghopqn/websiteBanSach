@@ -12,8 +12,8 @@ const ReadOnlyRow = ({ nhanvien, handleEditClick, handleDeleteClick }) => {
       <td>
         {nhanvien.hoten}
       </td>
-      <td>  {nhanvien.sdt}</td>
-      <td>    {nhanvien.diachi}</td>
+      <td>{nhanvien.sdt}</td>
+      <td>{nhanvien.diachi}</td>
       <td>{nhanvien.ngaysinh}</td>
       <td>{nhanvien.ngayvaolam}</td>
       <td>{nhanvien.email}</td>
@@ -21,18 +21,20 @@ const ReadOnlyRow = ({ nhanvien, handleEditClick, handleDeleteClick }) => {
       <td>{nhanvien.hinhanh}</td>
       <td>
         <button
-          type="button"
+          className="btn btn-info m-2"
+          type="button "
           onClick={(event) => handleEditClick(event, nhanvien)}
         >
           <BsFileArrowUpFill />
         </button>
         <button
-          type="button"
+          className="btn btn-info m-2"
+          type="button "
           onClick={(event) => handleEditClick(event, nhanvien)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(nhanvien.id)}>
+        <button className=" btn btn-danger m-2" type="button" onClick={() => handleDeleteClick(nhanvien.id)}>
           <AiOutlineDelete />
         </button>
       </td>

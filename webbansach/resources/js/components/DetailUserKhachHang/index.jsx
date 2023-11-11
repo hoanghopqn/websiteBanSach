@@ -65,7 +65,7 @@ function DetailUserKhachHang() {
     const [activeTab, setActiveTab] = useState(tabData[0].id);
 
     return (
-        <div className="feature w-100 d-block">
+        <div className="feature w-100 d-flex">
             <Tabs activeKey={activeTab} onSelect={(key) => setActiveTab(key)}>
                 {tabData.map((tab) => (
                     <Tab key={tab.id} eventKey={tab.id} title={<p>{tab.icon} {tab.name}</p>}>

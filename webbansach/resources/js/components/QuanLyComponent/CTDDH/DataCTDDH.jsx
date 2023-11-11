@@ -1,14 +1,14 @@
 import React from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 
-const DataCTDDH = ({ ctddh,index }) => {
+const DataCTDDH = ({ ctddh, index }) => {
 
   return (
 
     <tr key={index}>
-    <td scope="row">
-      {index}
-    </td>
+      <td scope="row">
+        {index}
+      </td>
       <td scope="row">
         {ctddh.masp}
       </td>
@@ -23,11 +23,12 @@ const DataCTDDH = ({ ctddh,index }) => {
       </td>
       <td>
         <button
+          className="btn btn-info m-2"
           type="button"
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" >
+        <button className="btn btn-danger m-2" type="button" >
           <AiOutlineDelete />
         </button>
       </td>

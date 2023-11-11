@@ -15,14 +15,15 @@ function ButtonFilter(props) {
   }
   return (
     <>
-      <div className='content-btn' dis>
+      <div className='content-btn'>
         {(theloai.length !== 0 || tacgia || nuocsx) && <div className='tilte-filter'>Loc theo:</div>}
-        {theloai && theloai.map((theloai, index) => {
-          return (
-            <Alert key={index} severity="" onClose={(theloai) => handleClose(theloai)}>{getName(listTheLoaiName, theloai).name}</Alert>
-          );
-        })}
-
+        <div className="filter-style">
+          {theloai && theloai.map((theloai, index) => {
+            return (
+              <Alert key={index} severity="" onClose={(theloai) => handleClose(theloai)}>{getName(listTheLoaiName, theloai).name}</Alert>
+            );
+          })}
+        </div>
         {tacgia && <Alert severity="" onClose={() => dispatch(filterByTacGia(''))}>{getName(listTacGiaName, tacgia).name}</Alert>}
         {nuocsx && <Alert severity="" onClose={() => dispatch(filterByNuocSX(''))}>{getName(listNuocSXName, nuocsx).name}</Alert>}
       </div>

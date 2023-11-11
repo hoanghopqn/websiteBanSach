@@ -11,15 +11,15 @@ const DataNuoc = ({ nuoc, handleEditClick, handleDeleteClick }) => {
       </td>
       <td>
         {nuoc.name}
-      </td> 
+      </td>
       <td>
-        <button
+        <button className="btn btn-info"
           type="button"
           onClick={(event) => handleEditClick(event, nuoc)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(nuoc.id)}>
+        <button className="btn btn-danger" type="button" onClick={() => handleDeleteClick(nuoc.id)}>
           <AiOutlineDelete />
         </button>
       </td>

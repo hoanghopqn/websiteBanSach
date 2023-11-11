@@ -24,17 +24,16 @@ function KhachHang(props) {
     email: "",
     ngaysinh: "",
   });
-  const handleSearch=async (e)=>{
+  const handleSearch = async (e) => {
     setSaveKH(khachhang);
-    if(e.target.value==null)
-    { 
+    if (e.target.value == null) {
       dispatch(getKhachHang(saveKH));
-    }else{ 
+    } else {
       setSearchKH(e.target.value)
-    const result = await quanlyServices.get(`SearchKH/${e.target.value}`);  
-    dispatch(getKhachHang(result.khachhang.data));
+      const result = await quanlyServices.get(`SearchKH/${e.target.value}`);
+      dispatch(getKhachHang(result.khachhang.data));
     };
- }
+  }
   const handleEditClick = (event, khachhang) => {
     event.preventDefault();
 
@@ -155,9 +154,9 @@ function KhachHang(props) {
     <>
       <div className='chucnang'>
         <div className='find-seach'>
-          <input className='header-input'  value={searchKH} onChange={(e)=>handleSearch(e)} type='text' placeholder='tìm kiếm...' /> 
+          <input className='header-input form-control' value={searchKH} onChange={(e) => handleSearch(e)} type='text' placeholder='tìm kiếm...' />
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <Container className="feature-card">
         <Form onSubmit={handleEditFormSubmit}>

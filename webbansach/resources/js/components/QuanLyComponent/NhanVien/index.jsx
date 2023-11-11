@@ -43,7 +43,7 @@ function NhanVien(props) {
       hinhanh: nhanvien.hinhanh,
     };
 
-      console.log(formValues)
+    console.log(formValues)
     setEditFormData(formValues);
   };
   const handleEditFormSubmit = async (event) => {
@@ -90,17 +90,16 @@ function NhanVien(props) {
     dispatch(getNhanVien(dsnv.nhanvien.data))
     dispatch(getDSTaiKhoan(dsttk.data))
   };
-  const handleSearch=async (e)=>{
+  const handleSearch = async (e) => {
     setSaveNV(nhanvien);
-    if(e.target.value==null)
-    { 
+    if (e.target.value == null) {
       dispatch(getNhanVien(saveNV));
-    }else{ 
+    } else {
       setSearchNV(e.target.value)
-const result = await quanlyServices.get(`SearchNV/${e.target.value}`);  
-dispatch(getNhanVien(result.nhanvien.data));
+      const result = await quanlyServices.get(`SearchNV/${e.target.value}`);
+      dispatch(getNhanVien(result.nhanvien.data));
     }
- }
+  }
   const handleEditFormChange = (event) => {
     event.preventDefault();
     const fieldName = event.target.getAttribute("name");
@@ -111,13 +110,12 @@ dispatch(getNhanVien(result.nhanvien.data));
     setEditFormData(newFormData);
   };
   const handleCancelClick = () => {
-    if(editFormData.id==' ')
-    {
-      const nhanviens = [...nhanvien]; 
+    if (editFormData.id == ' ') {
+      const nhanviens = [...nhanvien];
       const index = nhanvien.findIndex((nhanvien) => nhanvien.id === ' ');
       nhanviens.splice(index, 1);
       dispatch(getNhanVien(nhanviens));
-    }  
+    }
     setEditFormData({
       id: "",
       hoten: "",
@@ -169,9 +167,9 @@ dispatch(getNhanVien(result.nhanvien.data));
     <>
       <div className='chucnang'>
         <div className='find-seach'>
-          <input className='header-input' value={searchNV} onChange={(e)=>handleSearch(e)} type='text' placeholder='tìm kiếm...' /> 
+          <input className='header-input form-control m-2' value={searchNV} onChange={(e) => handleSearch(e)} type='text' placeholder='tìm kiếm...' />
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info m-2' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <Container className="feature-card">
         <Form onSubmit={handleEditFormSubmit}>

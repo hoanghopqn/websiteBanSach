@@ -14,7 +14,7 @@ const EditSP = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã Sản Phẩm..."
@@ -24,7 +24,7 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a Tên Sản Phẩm..."
@@ -34,12 +34,12 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <select className="select-option" name="loaisanpham_id" defaultValue={editFormData.loaisanpham_id} onChange={handleEditFormChange}>
+        <select className="select-option form-select" name="loaisanpham_id" defaultValue={editFormData.loaisanpham_id} onChange={handleEditFormChange}>
           {listTheLoaiName.map((theloai, index) => <option key={index} value={theloai.id}>{theloai.id} - {theloai.name}</option>)}
         </select>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mô tả..."
@@ -49,7 +49,7 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="number"
           required="required"
           placeholder="Enter an gia..."
@@ -59,7 +59,7 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="number"
           required="required"
           placeholder="Enter a số lượng tồn..."
@@ -69,7 +69,7 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a hinh ảnh..."
@@ -79,17 +79,17 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <select className="select-option" name="tacgia_id" defaultValue={editFormData.tacgia_id} onChange={handleEditFormChange}>
+        <select className="select-option form-select" name="tacgia_id" defaultValue={editFormData.tacgia_id} onChange={handleEditFormChange}>
           {listTacGiaName.map((tacgia, index) => <option key={index} value={tacgia.id}>{tacgia.id} - {tacgia.name}</option>)}
         </select>
       </td>
       <td>
-        <select className="select-option" name="nuoc_id" defaultValue={editFormData.nuoc_id} onChange={handleEditFormChange}>
+        <select className="select-option form-select" name="nuoc_id" defaultValue={editFormData.nuoc_id} onChange={handleEditFormChange}>
           {listNuocSXName.map((nuoc, index) => <option key={index} value={nuoc.id}>{nuoc.id} - {nuoc.name}</option>)}
         </select>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a trang thai..."
@@ -99,8 +99,8 @@ const EditSP = ({
         ></input>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info m-2" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning m-2" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

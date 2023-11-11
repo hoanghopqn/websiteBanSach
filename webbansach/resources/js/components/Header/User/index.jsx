@@ -22,9 +22,8 @@ function User({ handleClick, handleBlur, Hide }) {
         let path = `/register`;
         navigate(path);
     }
-    const handleToLoout = () => {
-        localStorage.removeItem("user");
-        localStorage.removeItem("userDDH");
+    const handleToLogout = () => {
+        localStorage.clear();
         let path = `/login`;
         navigate(path);
     }
@@ -37,7 +36,7 @@ function User({ handleClick, handleBlur, Hide }) {
                 <div className='page-user bg-white' style={Hide.user ? { display: 'none' } : { display: 'block' }}>
                     <div className='user-menu'>  <button className='user-button user-login btn-item-user' onClick={handleToDetailKH}>Thông tin Cá Nhân</button></div>
                     <div className='user-menu'>  <button className='user-button user-login btn-item-user' onClick={handleToDMk}>Đổi mật khẩu</button></div>
-                    <div className='user-menu'>  <button className='user-button user-register btn-item-user' onClick={handleToLoout}>Đăng Xuất</button></div>
+                    <div className='user-menu'>  <button className='user-button user-register btn-item-user' onClick={handleToLogout}>Đăng Xuất</button></div>
                 </div>
             </div>
             :

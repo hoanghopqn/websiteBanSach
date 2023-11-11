@@ -50,8 +50,8 @@ function SanPhamDDH(props) {
             <p>{DDH.thoigiandat}</p>
             <p>{DDH.tongtien}</p>
             <p>{nameTT}</p>
-            {id == 1 && <button onClick={(e) => handleEditClick(e, DDH, 4)}>Hủy</button>}
-            {id == 4 && <button onClick={(e) => handleEditClick(e, DDH, 1)}>Đặt Lại</button>}   </div>);
+            {id == 1 && <button className="btn btn-warning" onClick={(e) => handleEditClick(e, DDH, 4)}>Hủy</button>}
+            {id == 4 && <button className="btn btn-info" onClick={(e) => handleEditClick(e, DDH, 1)}>Đặt Lại</button>}   </div>);
       }) : <div></div>}
 
     </div>

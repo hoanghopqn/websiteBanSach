@@ -11,7 +11,7 @@ const EditPN = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter ma phieu nhap..."
@@ -21,7 +21,7 @@ const EditPN = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a nhanvien_id..."
@@ -31,7 +31,7 @@ const EditPN = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngaynhap..."
@@ -41,7 +41,7 @@ const EditPN = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="number"
           required="required"
           placeholder="Enter a tongtien..."
@@ -51,8 +51,8 @@ const EditPN = ({
         ></input>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

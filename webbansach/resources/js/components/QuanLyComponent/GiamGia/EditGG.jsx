@@ -13,7 +13,7 @@ const EditGG = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã dot..."
@@ -23,21 +23,21 @@ const EditGG = ({
         ></input>
       </td>
       <td>
-        <select className="select-option" name="masp" defaultValue={editFormData.masp} onChange={handleEditFormChange}>
+        <select className="select- form-select" name="masp" defaultValue={editFormData.masp} onChange={handleEditFormChange}>
           {sanpham.map((sanpham, index) => <option key={index} value={sanpham.maspmasp}>{sanpham.masp} - {sanpham.tensp}</option>)}
         </select>
-      </td> 
+      </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a nhanvien_id..."
           name="nhanvien_id"
-          value={editFormData.hoten} 
+          value={editFormData.hoten}
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a noi dung..."
@@ -47,7 +47,7 @@ const EditGG = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngaybd..."
@@ -57,7 +57,7 @@ const EditGG = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngaykt..."
@@ -67,7 +67,7 @@ const EditGG = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a phần trăm..."
@@ -77,8 +77,8 @@ const EditGG = ({
         ></input>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

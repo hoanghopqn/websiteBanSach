@@ -59,6 +59,7 @@ import { useDispatch } from "react-redux";
 import { getUerDDHLink } from "../../Actions/sanphamActions";
 import { useNavigate } from "react-router-dom";
 import SanPhamDDH from "./SanPhamDDH";
+import "./style.scss"
 
 const KhachHangDDH = () => {
     const [activeTab, setActiveTab] = useState("1"); // Set the initial active tab as a string
