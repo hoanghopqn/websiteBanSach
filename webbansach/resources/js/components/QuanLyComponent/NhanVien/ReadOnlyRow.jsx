@@ -25,13 +25,6 @@ const ReadOnlyRow = ({ nhanvien, handleEditClick, handleDeleteClick }) => {
           type="button "
           onClick={(event) => handleEditClick(event, nhanvien)}
         >
-          <BsFileArrowUpFill />
-        </button>
-        <button
-          className="btn btn-info m-2"
-          type="button "
-          onClick={(event) => handleEditClick(event, nhanvien)}
-        >
           <AiOutlineEdit />
         </button>
         <button className=" btn btn-danger m-2" type="button" onClick={() => handleDeleteClick(nhanvien.id)}>

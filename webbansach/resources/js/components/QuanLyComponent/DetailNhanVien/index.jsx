@@ -25,14 +25,13 @@ function DetailNhanVien() {
             ngaysinh: DetailNV.ngaysinh,
             ngayvaolam: DetailNV.ngayvaolam,
             email: DetailNV.email,
-            taikhoan: nhanvien.taikhoan,
+            taikhoan: nhanvien.user.taikhoan,
             hinhanh: DetailNV.hinhanh,
             thangthai: 1
         };
         await quanlyServices.update(`nhanvien/${nhanvien.user.id}`, editedContact);
         localStorage.setItem("nhanvien", JSON.stringify({ ...nhanvien, user: { ...editedContact } }));
     }
-
     const handleEditFormChange = (event) => {
         event.preventDefault();
 
@@ -44,6 +43,7 @@ function DetailNhanVien() {
 
         setDetailNV(newFormData);
     };
+    console.log(nhanvien);
     return (
         <> {nhanvien ? <>
             <form className='form-user m-3 mb-5' onSubmit={handlSubmit}>
@@ -52,7 +52,7 @@ function DetailNhanVien() {
                 </div>
                 <div className='form-info'>
                     <div className='form-group m-3'>
-                        <label>Tên Đăng Nhập: {nhanvien.taikhoan}</label>
+                        <label>Tên Đăng Nhập: {nhanvien.user.taikhoan}</label>
                     </div>
                     <div className='form-group m-3'>
                         <label>Tên: </label>
