@@ -36,7 +36,19 @@ const RegisterComponent = () => {
       quyen_id: 2,
       thangthai: 1
     };
-    if (await quanlyServices.get('dstaikhoan', data.taikhoan)) {
+
+    var checkExist = false;
+    await quanlyServices.get('dstaikhoan', data.taikhoan)
+      .then((res) => {
+        res.dstaikhoan.data.map((tk) => {
+          if (tk.taikhoan == newKH.taikhoan) {
+            checkExist = true;
+          }
+        })
+        console.log(res)
+      });
+
+    if (checkExist) {
       setErrorsss('1');
     } else {
       await quanlyServices.store('dstaikhoan', createTK);
