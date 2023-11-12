@@ -24,11 +24,12 @@ const DataDSTK = (props) => {
       </td>
       <td>
         <button
+          className="btn btn-info"
           type="button"
         >
           Edit
         </button>
-        <button type="button"  >
+        <button className="btn btn-danger" type="button"  >
           Delete
         </button>
       </td>

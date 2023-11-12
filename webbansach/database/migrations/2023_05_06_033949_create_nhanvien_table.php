@@ -26,6 +26,7 @@ return new class extends Migration
             ->references('taikhoan')->on('dstaikhoan')->onUpdate('cascade');
             $table->string('hinhanh', 100)->nullable();
             $table->integer('thangthai');
+            $table->timestamps();
         });
     }
 

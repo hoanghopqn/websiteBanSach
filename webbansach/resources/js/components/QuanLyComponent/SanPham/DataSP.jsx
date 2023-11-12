@@ -37,13 +37,13 @@ const DataSP = ({ sanpham, handleEditClick, handleDeleteClick }) => {
         {sanpham.thangthaisp}
       </td>
       <td>
-        <button
-          type="button"
+        <button className="btn btn-info m-2"
+          type="btn"
           onClick={(event) => handleEditClick(event, sanpham)}
         >
           <AiOutlineEdit />
         </button>
-        <button type="button" onClick={() => handleDeleteClick(sanpham.masp)}>
+        <button className="btn btn-danger m-2" type="button" onClick={() => handleDeleteClick(sanpham.masp)}>
           <AiOutlineDelete />
         </button>
       </td>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NhanVien extends Model
 {
+    public $timestamps = true;
     use HasFactory; 
     protected $table='nhanvien';
     protected $fillable=[ 

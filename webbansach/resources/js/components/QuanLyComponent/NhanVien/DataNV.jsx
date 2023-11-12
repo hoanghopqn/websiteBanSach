@@ -11,6 +11,7 @@ const DataNV = ({
     <tr>
       <td scope="row">
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã nhân viên..."
@@ -21,6 +22,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a hoten..."
@@ -31,6 +33,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a sdt..."
@@ -41,6 +44,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a dia chi..."
@@ -51,6 +55,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngaysinh..."
@@ -61,6 +66,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngayvaolam..."
@@ -71,6 +77,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="email"
           required="required"
           placeholder="Enter an email..."
@@ -81,6 +88,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a taikhoan..."
@@ -91,6 +99,7 @@ const DataNV = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a hinhanh..."
@@ -100,8 +109,8 @@ const DataNV = ({
         ></input>
       </td>
       <td>
-        <button type="submit"   ><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info m-2" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning m-2" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

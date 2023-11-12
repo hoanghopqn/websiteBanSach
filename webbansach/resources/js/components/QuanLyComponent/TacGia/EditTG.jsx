@@ -14,7 +14,7 @@ const EditTG = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã khách hàng..."
@@ -24,7 +24,7 @@ const EditTG = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a Họ Tên..."
@@ -34,7 +34,7 @@ const EditTG = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a tieu su..."
@@ -44,17 +44,17 @@ const EditTG = ({
         ></input>
       </td>
       <td>
-        <select className="select-option" name="nuoc_id" defaultValue={editFormData.nuoc_id} onChange={handleEditFormChange}>
+        <select className="select-option form-select" name="nuoc_id" defaultValue={editFormData.nuoc_id} onChange={handleEditFormChange}>
           {listNuocSXName.map((nuoc, index) => <option key={index} value={nuoc.id}>{nuoc.id} - {nuoc.name}</option>)}
         </select>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>
-        
+
     </tr>
   );
 };

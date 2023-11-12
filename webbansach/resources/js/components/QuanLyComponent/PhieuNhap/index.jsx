@@ -21,18 +21,17 @@ function PhieuNhap(props) {
     ngaynhap: "",
     tongtien: "",
   });
-  const handleSearch=async (e)=>{
+  const handleSearch = async (e) => {
     setSavePN(phieunhap);
-    if(e.target.value==null)
-    {
+    if (e.target.value == null) {
       dispatch(getPhieuNhap(savePN));
 
-    }else{ 
+    } else {
       setSearchPN(e.target.value)
-      const result = await quanlyServices.get(`SearchPN/${e.target.value}`);  
+      const result = await quanlyServices.get(`SearchPN/${e.target.value}`);
       dispatch(getPhieuNhap(result.phieunhapsanpham.data));
     }
- }
+  }
   const handleEditClick = (event, phieunhap) => {
     event.preventDefault();
 
@@ -81,7 +80,7 @@ function PhieuNhap(props) {
 
     setEditFormData(newFormData);
   };
-  const handleCancelClick = () => { 
+  const handleCancelClick = () => {
     setEditFormData({
       maphieunhap: "",
       nhanvien_id: "",
@@ -95,7 +94,7 @@ function PhieuNhap(props) {
 
   const handleADD = () => {
     setTF(false);
-    const newmapn =phieunhap.length>0&&phieunhap.length<9? ('phieunhap000' + (phieunhap.length + 1)):('phieunhap00' + (phieunhap.length + 1));
+    const newmapn = phieunhap.length > 0 && phieunhap.length < 9 ? ('phieunhap000' + (phieunhap.length + 1)) : ('phieunhap00' + (phieunhap.length + 1));
     const newPN = {
       maphieunhap: newmapn,
       nhanvien_id: "",
@@ -112,9 +111,9 @@ function PhieuNhap(props) {
     <>
       <div className='chucnang'>
         <div className='find-seach'>
-          <input className='header-input'  value={searchPN} onChange={(e)=>handleSearch(e)}  type='text' placeholder='tìm kiếm...' /> 
+          <input className='header-input form-control' value={searchPN} onChange={(e) => handleSearch(e)} type='text' placeholder='tìm kiếm...' />
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <Container className="feature-card">
         <Form onSubmit={handleEditFormSubmit}>

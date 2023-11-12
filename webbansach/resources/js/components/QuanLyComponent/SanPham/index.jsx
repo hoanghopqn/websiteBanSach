@@ -10,13 +10,13 @@ import EditSP from "./EditSP";
 import DataSP from "./DataSP";
 
 function SanPham(props) {
-  
-  const { sanpham,lengthma } = props;
+
+  const { sanpham, lengthma } = props;
   const [TF, setTF] = useState(true);
   const [searchSP, setSearchSP] = useState('');
   const [saveSP, setSaveSP] = useState([]);
   const dispatch = useDispatch();
-  const newmasp=`masp0${lengthma+1}`;
+  const newmasp = `masp0${lengthma + 1}`;
   const [editFormData, setEditFormData] = useState({
     masp: "",
     tensp: "",
@@ -29,17 +29,16 @@ function SanPham(props) {
     nuoc_id: "",
     thangthaisp: "",
   });
-  const handleSearch=async (e)=>{
+  const handleSearch = async (e) => {
     setSaveSP(sanpham);
-    if(e.target.value==null)
-    { 
+    if (e.target.value == null) {
       dispatch(getSanPham(saveSP));
-    }else{ 
-      setSearchSP(e.target.value) 
+    } else {
+      setSearchSP(e.target.value)
       const result = await quanlyServices.get(`SearchDetail/${e.target.value}`);
       dispatch(getSanPham(result.sanpham.data));
     }
- }
+  }
   const handleEditClick = (event, sanpham) => {
     event.preventDefault();
 
@@ -77,10 +76,10 @@ function SanPham(props) {
     };
 
     console.log(editedContact)
-    if(TF){ 
-      await quanlyServices.update( `sanpham/${editFormData.masp}` , editedContact);
-    }else {  
-      await quanlyServices.store( 'sanpham' , editedContact); 
+    if (TF) {
+      await quanlyServices.update(`sanpham/${editFormData.masp}`, editedContact);
+    } else {
+      await quanlyServices.store('sanpham', editedContact);
     }
     setEditFormData({
       masp: "",
@@ -94,8 +93,8 @@ function SanPham(props) {
       nuoc_id: "",
       thangthaisp: "",
     });
-    const dssp = await quanlyServices.get('sanpham'); 
-    dispatch(getSanPham(dssp.sanpham.data)) 
+    const dssp = await quanlyServices.get('sanpham');
+    dispatch(getSanPham(dssp.sanpham.data))
   };
   const handleEditFormChange = (event) => {
     event.preventDefault();
@@ -109,13 +108,12 @@ function SanPham(props) {
     setEditFormData(newFormData);
   };
   const handleCancelClick = () => {
-    if(editFormData.id==newmasp)
-    {
-      const sanphams = [...sanpham]; 
+    if (editFormData.id == newmasp) {
+      const sanphams = [...sanpham];
       const index = sanpham.findIndex((sanpham) => sanpham.id === newmasp);
       sanphams.splice(index, 1);
       dispatch(getSanPham(sanphams));
-    }   
+    }
     setEditFormData({
       masp: "",
       tensp: "",
@@ -131,9 +129,9 @@ function SanPham(props) {
   };
   const handleDeleteClick = async (id) => {
 
-  };   
+  };
   const handleADD = () => {
-    setTF(false);  
+    setTF(false);
     const newSP = {
       masp: newmasp,
       tensp: "",
@@ -152,50 +150,51 @@ function SanPham(props) {
   return (
     <>
       <div className='chucnang'>
-        <div className='find-seach'>
-          <input className='header-input'  value={searchSP} onChange={(e)=>handleSearch(e)} type='text' placeholder='tìm kiếm...' /> 
+        <div className='find-seach m-3'>
+          <input className='header-input form-control' value={searchSP} onChange={(e) => handleSearch(e)} type='text' placeholder='tìm kiếm...' />
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info m-3' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <Container className="feature-card">
         <Form onSubmit={handleEditFormSubmit}>
-          <Table >   <thead>
-            <tr>
-              <th>
-                Mã Sản Phẩm
-              </th>
-              <th>
-                Tên Sản Phẩm
-              </th>
-              <th>
-                Loại Sản Phẩm
-              </th>
-              <th>
-                Mô Tả
-              </th>
-              <th>
-                Giá
-              </th>
-              <th>
-                Số Lượng Tồn
-              </th>
-              <th>
-                Hình ảnh
-              </th>
-              <th>
-                Tác Giả
-              </th>
-              <th>
-                Nước Xuất Bản
-              </th>
-              <th>
-                Trạng Thái
-              </th>
-              <th>
-                Chức Năng
-              </th>
-            </tr>
-          </thead>
+          <Table className="table-content">
+            <thead>
+              <tr>
+                <th>
+                  Mã Sản Phẩm
+                </th>
+                <th>
+                  Tên Sản Phẩm
+                </th>
+                <th>
+                  Loại Sản Phẩm
+                </th>
+                <th>
+                  Mô Tả
+                </th>
+                <th>
+                  Giá
+                </th>
+                <th>
+                  Số Lượng Tồn
+                </th>
+                <th>
+                  Hình ảnh
+                </th>
+                <th>
+                  Tác Giả
+                </th>
+                <th>
+                  Nước Xuất Bản
+                </th>
+                <th>
+                  Trạng Thái
+                </th>
+                <th>
+                  Chức Năng
+                </th>
+              </tr>
+            </thead>
             <tbody>
               {sanpham.map((sanpham, index) => (editFormData.masp === sanpham.masp ?
                 <EditSP
@@ -211,9 +210,9 @@ function SanPham(props) {
                   handleDeleteClick={handleDeleteClick}
                 />
               ))}
-
             </tbody>
-          </Table></Form>
+          </Table>
+        </Form>
       </Container>
     </>
   );

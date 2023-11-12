@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SanPham extends Model
 {
+    public $timestamps = true;
     use HasFactory; 
     protected $table = 'sanpham';
     protected $fillable = [

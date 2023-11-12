@@ -22,6 +22,7 @@ return new class extends Migration
             ->references('masp')->on('sanpham')->onUpdate('cascade');
             $table->integer('soluong');
             $table->float('dongia', 8, 2);
+            $table->timestamps();
         });
     }
 

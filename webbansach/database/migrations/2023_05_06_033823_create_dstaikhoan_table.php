@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('matkhau',50);
             $table->foreignId('quyen_id')->constrained('quyen')->onUpdate('cascade');
             $table->integer('thangthai');
-
+            $table->timestamps();
         });
     }
 

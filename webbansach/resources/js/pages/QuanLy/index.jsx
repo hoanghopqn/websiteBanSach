@@ -14,15 +14,15 @@ import {
 function QuanLy() {
     const dispatch = useDispatch();
     const listds = useSelector((state) => state.sanpham);
-    const { listNhanVien, listKhachHang, listSanPham, listGiamGia, listDSTaiKhoan, listPhieuNhap, listCTPN, listDDH,listTacGia,listNuoc } = listds;
+    const { listNhanVien, listKhachHang, listSanPham, listGiamGia, listDSTaiKhoan, listPhieuNhap, listCTPN, listDDH, listTacGia, listNuoc } = listds;
     const filterNVs = listNhanVien.filterNV;
     const filterKHs = listKhachHang.filterKH;
     const filterSPs = listSanPham.filterSP;
-    const filterPNs = listPhieuNhap.filterPN; 
-    const filterDDHs = listDDH.filter;     
-    const filterTGs = listTacGia.filterTG;     
-    const filterNs = listNuoc.filterN;        
-    const filterDSTKs = listDSTaiKhoan.filterDSTK;     
+    const filterPNs = listPhieuNhap.filterPN;
+    const filterDDHs = listDDH.filter;
+    const filterTGs = listTacGia.filterTG;
+    const filterNs = listNuoc.filterN;
+    const filterDSTKs = listDSTaiKhoan.filterDSTK;
     useEffect(() => {
 
         const getNV = async () => {
@@ -48,7 +48,7 @@ function QuanLy() {
                 }
             };
             const result = await quanlyServices.get("tacgia", filter);
-            dispatch(getTacGia(result.tacgia.data)); 
+            dispatch(getTacGia(result.tacgia.data));
             dispatch(getMetaTacGia(result.tacgia.meta));
         };
         getTG();
@@ -83,20 +83,20 @@ function QuanLy() {
         };
         getKH();
     }, [filterKHs]);
-    useEffect(() => {  
-          const getDDH = async () => {
-              const endpoint = filterDDHs.link;
-          const filter = {
-              params: { 
-                  limit: filterDDHs.limit,
-                  page: filterDDHs.page,
-              }
-          }; 
-          const result = await quanlyServices.get(endpoint, filter);
-          dispatch(getDonDatHang(result.dondathang.data)); 
-          dispatch(getMetaDonDatHang(result.dondathang.meta));
-                 };
-      getDDH();
+    useEffect(() => {
+        const getDDH = async () => {
+            const endpoint = filterDDHs.link;
+            const filter = {
+                params: {
+                    limit: filterDDHs.limit,
+                    page: filterDDHs.page,
+                }
+            };
+            const result = await quanlyServices.get(endpoint, filter);
+            dispatch(getDonDatHang(result.dondathang.data));
+            dispatch(getMetaDonDatHang(result.dondathang.meta));
+        };
+        getDDH();
     }, [filterDDHs]);
     useEffect(() => {
 
@@ -154,18 +154,18 @@ function QuanLy() {
         const getGG = async () => {
             const result = await quanlyServices.get("giamgia");
             dispatch(getGiamGia(result.giamgia.data));
-        }; 
+        };
         const getCTPN = async () => {
             const result = await quanlyServices.get("ctpn");
             dispatch(getCTPhieuNhap(result.ctpn));
         };
-        getCTPN(); 
+        getCTPN();
         // getDonDatHang();
-        getGG(); 
+        getGG();
     }, []);
     return (
         <>
-            <QuanLyComponent 
+            <QuanLyComponent
             />
         </>
     );

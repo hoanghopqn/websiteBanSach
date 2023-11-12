@@ -12,6 +12,7 @@ const EditKH = ({
     <tr>
       <td scope="row">
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã khách hàng..."
@@ -22,6 +23,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a Họ Tên..."
@@ -32,6 +34,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a dia chi..."
@@ -42,6 +45,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a sdt..."
@@ -52,6 +56,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="text"
           required="required"
           placeholder="Enter a taikhoan..."
@@ -62,6 +67,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="email"
           required="required"
           placeholder="Enter an email..."
@@ -72,6 +78,7 @@ const EditKH = ({
       </td>
       <td>
         <input
+          className="form-control"
           type="date"
           required="required"
           placeholder="Enter a ngaysinh..."
@@ -81,8 +88,8 @@ const EditKH = ({
         ></input>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

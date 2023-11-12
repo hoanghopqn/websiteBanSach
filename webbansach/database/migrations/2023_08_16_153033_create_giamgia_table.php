@@ -22,6 +22,8 @@ return new class extends Migration
             $table->date('ngaybd');
             $table->date('ngaykt');
             $table->integer('phantram');
+            $table->timestamps();
+            
         });
     }
 

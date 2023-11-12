@@ -16,20 +16,20 @@ function NuocXuatBan(props) {
   const dispatch = useDispatch();
   const [editFormData, setEditFormData] = useState({
     id: "",
-    name: "", 
-  }); 
-  const handleSearch=async (e)=>{
+    name: "",
+  });
+  const handleSearch = async (e) => {
     setSearchN(e.target.value)
-  const result = await quanlyServices.get(`SearchN/${e.target.value}`);  
-  dispatch(getNuoc(result.nuoc.data));
- }
+    const result = await quanlyServices.get(`SearchN/${e.target.value}`);
+    dispatch(getNuoc(result.nuoc.data));
+  }
   const handleEditClick = (event, nuoc) => {
     event.preventDefault();
 
     setTF(true);
     const formValues = {
       id: nuoc.id,
-      name: nuoc.name,  
+      name: nuoc.name,
     };
 
     setEditFormData(formValues);
@@ -38,21 +38,21 @@ function NuocXuatBan(props) {
   const handleEditFormSubmit = async (event) => {
     event.preventDefault();
 
-    const editedContact = { 
+    const editedContact = {
       id: editFormData.id,
-      tennuoc: editFormData.name,   
+      tennuoc: editFormData.name,
     };
 
     if (TF) {
       await quanlyServices.update(`nuoc/${editFormData.id}`, editedContact);
-    } else { 
-      await quanlyServices.store('nuoc', editedContact); 
+    } else {
+      await quanlyServices.store('nuoc', editedContact);
     }
     setEditFormData({
       id: "",
-      name: "", 
+      name: "",
     });
-    const LoadN = await quanlyServices.get('nuoc'); 
+    const LoadN = await quanlyServices.get('nuoc');
     dispatch(getNuoc(LoadN.nuocsx.data));
   };
   const handleEditFormChange = (event) => {
@@ -67,40 +67,39 @@ function NuocXuatBan(props) {
     setEditFormData(newFormData);
   };
   const handleCancelClick = () => {
-    if(editFormData.id==' ')
-    {
-      const nuocs = [...nuoc]; 
+    if (editFormData.id == ' ') {
+      const nuocs = [...nuoc];
       const index = nuoc.findIndex((nuoc) => nuoc.id === ' ');
       nuocs.splice(index, 1);
       dispatch(getNuoc(nuocs));
-    }  
+    }
     setEditFormData({
       id: "",
-      name: "", 
+      name: "",
     });
   };
   const handleDeleteClick = async (id) => {
 
-    
+
   };
 
-  const handleADD = () => { 
+  const handleADD = () => {
     setTF(false);
     const newN = {
       id: " ",
-      name: "", 
+      name: "",
     }
     setEditFormData(newN);
     dispatch(getNuoc([newN, ...nuoc]));
-     
+
   }
   return (
     <>
       <div className='chucnang'>
         <div className='find-seach'>
-          <input className='header-input'  value={searchN} onChange={(e)=>handleSearch(e)} type='text' placeholder='tìm kiếm...' /> 
+          <input className='header-input form-control' value={searchN} onChange={(e) => handleSearch(e)} type='text' placeholder='tìm kiếm...' />
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <Container className="feature-card">
         <Form onSubmit={handleEditFormSubmit}>
@@ -111,10 +110,10 @@ function NuocXuatBan(props) {
               </th>
               <th>
                 Tên Nước
-              </th> 
+              </th>
               <th>
                 Chức Năng
-              </th> 
+              </th>
             </tr>
           </thead>
             <tbody>

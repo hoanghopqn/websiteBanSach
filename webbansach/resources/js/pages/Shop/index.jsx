@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDisplaySanPham, getPagination } from "../../Actions/sanphamActions";
 
 function Shop() {
- 
+
     const dispatch = useDispatch();
-    const filters = useSelector((state) => state.sanpham.filter); 
+    const filters = useSelector((state) => state.sanpham.filter);
     useEffect(() => {
         const getDisplaySanPhams = async () => {
             const endpoint = filters.link;
@@ -24,16 +24,15 @@ function Shop() {
                     page: filters.page,
                 },
             };
-            const result = await sanphamServices.getListSanPham(endpoint, filter);  
-            dispatch(getPagination(result.sanpham.meta)); 
-            dispatch(getDisplaySanPham(result.sanpham.data));  
+            const result = await sanphamServices.getListSanPham(endpoint, filter);
+            dispatch(getPagination(result.sanpham.meta));
+            dispatch(getDisplaySanPham(result.sanpham.data));
         };
         getDisplaySanPhams();
-    }, [filters]);   
+    }, [filters]);
     return (
         <>
-            <ShopComponent 
-            />
+            <ShopComponent />
         </>
     );
 }

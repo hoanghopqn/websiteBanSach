@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Form  } from "react-bootstrap";
+import { Container, Table, Form } from "react-bootstrap";
 import "./style.scss";
 import DataGG from "./DataGG";
 import { useDispatch } from "react-redux";
 import * as quanlyServices from '../../../apiServices/quanlyServices';
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsPlusCircle } from "react-icons/bs";
-import EditGG from "./EditGG"; 
+import EditGG from "./EditGG";
 import { getGiamGia } from "../../../Actions/sanphamActions";
 
 function GiamGia(props) {
-  const { giamgia,nhanvienid,hotenid } = props
+  const { giamgia, nhanvienid, hotenid } = props
   const dispatch = useDispatch();
-  const [TF, setTF] = useState(true); 
+  const [TF, setTF] = useState(true);
   const [editFormData, setEditFormData] = useState({
     id: "",
     masp: "",
@@ -43,7 +43,7 @@ function GiamGia(props) {
   const handleEditFormSubmit = async (event) => {
     event.preventDefault();
 
-    const editedContact = { 
+    const editedContact = {
       masp: editFormData.masp,
       nhanvien_id: editFormData.nhanvien_id,
       noidung: editFormData.noidung,
@@ -67,8 +67,8 @@ function GiamGia(props) {
       ngaykt: "",
       phantram: "",
     });
-    const LoadGG = await quanlyServices.get('giamgia'); 
-    dispatch(getGiamGia(LoadGG.giamgia.data)); 
+    const LoadGG = await quanlyServices.get('giamgia');
+    dispatch(getGiamGia(LoadGG.giamgia.data));
   };
   const handleEditFormChange = (event) => {
     event.preventDefault();
@@ -82,13 +82,12 @@ function GiamGia(props) {
     setEditFormData(newFormData);
   };
   const handleCancelClick = () => {
-    if(editFormData.id==' ')
-    {
-      const giamgias = [...giamgia]; 
+    if (editFormData.id == ' ') {
+      const giamgias = [...giamgia];
       const index = giamgia.findIndex((giamgia) => giamgia.id === ' ');
       giamgias.splice(index, 1);
       dispatch(getGiamGia(giamgias));
-    }  
+    }
     setEditFormData({
       id: "",
       masp: "",
@@ -102,7 +101,7 @@ function GiamGia(props) {
   };
   const handleDeleteClick = async (madot) => {
 
-  }; 
+  };
   const handleADD = () => {
     setTF(false);
     const newGG = {
@@ -115,68 +114,68 @@ function GiamGia(props) {
       ngaykt: "",
       phantram: "",
     }
-    setEditFormData(newGG); 
+    setEditFormData(newGG);
     dispatch(getGiamGia([newGG, ...giamgia]));
   }
   return (
     <>
       <div className='chucnang'>
-        <div className='find-seach'>
-          <input className='header-input' type='text' placeholder='tìm kiếm...' />
-          <button className='button-seach'><AiOutlineSearch size={25} /></button>
+        <div className='find-seach d-flex'>
+          <input className='header-input form-control' type='text' placeholder='tìm kiếm...' />
+          <button className='button-seach btn btn-primary'><AiOutlineSearch size={25} /></button>
         </div>
-        <button className='button-add' onClick={handleADD}><BsPlusCircle size={25} /></button>
+        <button className='button-add btn btn-info' onClick={handleADD}><BsPlusCircle size={25} /></button>
       </div>
       <div className='giamgia-content'>
         <Container className="feature-card">
-        <Form onSubmit={handleEditFormSubmit}>
-          <Table >   <thead>
-            <tr>
-              <th>
-                Mã Đợt
-              </th>
-              <th>
-                tensp
-              </th>
-              <th>
-                Mã Nhân Viên
-              </th>
-              <th>
-                Nội Dung
-              </th>
-              <th>
-                Ngày Bắt Đầu
-              </th>
-              <th>
-                Ngày Kết Thúc
-              </th>
-              <th>
-                Phần Trăm
-              </th>
-              <th>
-                Chức Năng
-              </th>
-            </tr>
-          </thead>
-            <tbody>
-              {giamgia.map((giamgia, index) => (editFormData.id === giamgia.id ?
-                <EditGG
-                  key={index}
-                  editFormData={editFormData}
-                  handleEditFormChange={handleEditFormChange}
-                  handleCancelClick={handleCancelClick}
-                /> :
-                <DataGG
-                  key={index} 
-                  giamgia={giamgia} 
-                  handleEditClick={handleEditClick}
-                  handleDeleteClick={handleDeleteClick}
-                />
-              ))}
+          <Form onSubmit={handleEditFormSubmit}>
+            <Table >   <thead>
+              <tr>
+                <th>
+                  Mã Đợt
+                </th>
+                <th>
+                  tensp
+                </th>
+                <th>
+                  Mã Nhân Viên
+                </th>
+                <th>
+                  Nội Dung
+                </th>
+                <th>
+                  Ngày Bắt Đầu
+                </th>
+                <th>
+                  Ngày Kết Thúc
+                </th>
+                <th>
+                  Phần Trăm
+                </th>
+                <th>
+                  Chức Năng
+                </th>
+              </tr>
+            </thead>
+              <tbody>
+                {giamgia.map((giamgia, index) => (editFormData.id === giamgia.id ?
+                  <EditGG
+                    key={index}
+                    editFormData={editFormData}
+                    handleEditFormChange={handleEditFormChange}
+                    handleCancelClick={handleCancelClick}
+                  /> :
+                  <DataGG
+                    key={index}
+                    giamgia={giamgia}
+                    handleEditClick={handleEditClick}
+                    handleDeleteClick={handleDeleteClick}
+                  />
+                ))}
 
-            </tbody>
-          </Table></Form>
-        </Container> 
+              </tbody>
+            </Table></Form>
+        </Container>
       </div>
     </>
   );

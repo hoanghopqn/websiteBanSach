@@ -15,7 +15,7 @@ function ListReview({}) {
          <img className="img-user" alt="" src={`/images/user.jpg`}/>
            <div className="review-detail-title">
                <div>
-               <a>{listRV.review_title}</a> 
+               <p>{listRV.review_title}</p> 
                </div>
                <div> 
                <span>{listRV.rating_start} sao</span>

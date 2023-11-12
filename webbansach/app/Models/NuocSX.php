@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NuocSX extends Model
 {
+    public $timestamps = true;
     use HasFactory; 
     protected $table = 'nuocxuatban';
     protected $fillable = [

@@ -11,7 +11,7 @@ const EditDDH = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter id..."
@@ -21,7 +21,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a khachhang_id..."
@@ -31,7 +31,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a nhanvien_id..."
@@ -41,7 +41,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a dia chi..."
@@ -51,7 +51,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a sdt..."
@@ -61,7 +61,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a ghichu..."
@@ -71,7 +71,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="number"
           required="required"
           placeholder="Enter a tongtien..."
@@ -81,7 +81,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="date"
           required="required"
           placeholder="Enter a thoigiandat..."
@@ -91,7 +91,7 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a trang thai..."
@@ -101,8 +101,8 @@ const EditDDH = ({
         ></input>
       </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>

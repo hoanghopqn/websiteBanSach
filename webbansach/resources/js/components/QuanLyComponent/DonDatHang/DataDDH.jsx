@@ -1,7 +1,7 @@
 import React from "react";
-import { AiOutlineDelete, AiOutlineEdit,AiOutlineBars } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineEdit, AiOutlineBars } from "react-icons/ai";
 
-const DataDDH = ({ dondathang, handleEditClick, handleCTDDHClick ,nameTT}) => {
+const DataDDH = ({ dondathang, handleEditClick, handleCTDDHClick, nameTT }) => {
   return (
 
     <tr>
@@ -34,32 +34,32 @@ const DataDDH = ({ dondathang, handleEditClick, handleCTDDHClick ,nameTT}) => {
       </td>
 
       <td>
-        <button className="button-ctddh"
+        <button className="button-ctddh btn btn-info m-2"
           type="button"
           onClick={() => handleCTDDHClick(dondathang.id)}
         >
-         <AiOutlineBars/>
+          <AiOutlineBars />
         </button>
-        {nameTT===1&&<><button className="button-duyet"
+        {nameTT === 1 && <><button className="button-duyet btn btn-info m-2"
           type="button"
-          onClick={(event) => handleEditClick(event, dondathang,2)}
+          onClick={(event) => handleEditClick(event, dondathang, 2)}
         >
-         Duyệt
+          Duyệt
         </button>
-        <button className="button-tuchoi" type="button" onClick={(event) => handleEditClick(event, dondathang,0)}> 
-        Từ Chối
-        </button></>}
-        {nameTT===2&&<button className="button-duyet"
+          <button className="button-tuchoi btn btn-warning m-2" type="button" onClick={(event) => handleEditClick(event, dondathang, 0)}>
+            Từ Chối
+          </button></>}
+        {nameTT === 2 && <button className="button-duyet btn btn-info m-2"
           type="button"
-          onClick={(event) => handleEditClick(event, dondathang,3)}
+          onClick={(event) => handleEditClick(event, dondathang, 3)}
         >
-         Đã Giao
-        </button>}  
-        {nameTT===0&&<button className="button-duyet"
+          Đã Giao
+        </button>}
+        {nameTT === 0 && <button className="button-duyet btn btn-info m-2"
           type="button"
-          onClick={(event) => handleEditClick(event, dondathang,1)}
+          onClick={(event) => handleEditClick(event, dondathang, 1)}
         >
-         Khôi Phục
+          Khôi Phục
         </button>}
       </td>
     </tr>

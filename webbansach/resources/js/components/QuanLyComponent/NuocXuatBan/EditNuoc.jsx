@@ -11,7 +11,7 @@ const EditNuoc = ({
 
     <tr>
       <td scope="row">
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a mã nuoc..."
@@ -21,7 +21,7 @@ const EditNuoc = ({
         ></input>
       </td>
       <td>
-        <input
+        <input className="form-control"
           type="text"
           required="required"
           placeholder="Enter a Họ Tên..."
@@ -29,14 +29,14 @@ const EditNuoc = ({
           value={editFormData.name}
           onChange={handleEditFormChange}
         ></input>
-      </td> 
+      </td>
       <td>
-        <button type="submit"><AiOutlineSave /></button>
-        <button type="button" onClick={handleCancelClick}>
+        <button className="btn btn-info" type="submit"><AiOutlineSave /></button>
+        <button className="btn btn-warning" type="button" onClick={handleCancelClick}>
           <AiFillCloseCircle />
         </button>
       </td>
-        
+
     </tr>
   );
 };

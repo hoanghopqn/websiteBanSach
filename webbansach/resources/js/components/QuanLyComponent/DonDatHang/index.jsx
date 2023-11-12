@@ -1,21 +1,20 @@
 import React, { useState } from "react";
-import { Container, Table, Form,CloseButton } from "react-bootstrap";
-import { AiFillCloseSquare } from "react-icons/ai"; 
+import { Container, Table, Form, CloseButton } from "react-bootstrap";
 import * as quanlyServices from '../../../apiServices/quanlyServices';
 import "./style.scss";
-import DataDDH from "./DataDDH"; 
-import { useDispatch } from "react-redux"; 
+import DataDDH from "./DataDDH";
+import { useDispatch } from "react-redux";
 import CTDDH from "../CTDDH";
 import { getDonDatHang } from "../../../Actions/sanphamActions";
 
 function DonDatHang(props) {
-  const { dsdondathang,filterDDHs,nhanvienid,nameTT } = props; 
-  const [OCTDDH, setOCTDDH] = useState("ctddh-content displaynone"); 
+  const { dsdondathang, filterDDHs, nhanvienid, nameTT } = props;
+  const [OCTDDH, setOCTDDH] = useState("ctddh-content displaynone");
   const [dsctddh, setDSCTDDH] = useState([]);
-  const dispatch = useDispatch(); 
-  const handleEditClick = async (event, dondathang,trangthai) => {
+  const dispatch = useDispatch();
+  const handleEditClick = async (event, dondathang, trangthai) => {
     event.preventDefault();
- 
+
     const formValues = {
       id: dondathang.id,
       khachhang_id: dondathang.khachhang_id,
@@ -27,38 +26,38 @@ function DonDatHang(props) {
       tongtien: dondathang.tongtien,
       thoigiandat: dondathang.thoigiandat,
     };
-    
-  // const result = await quanlyServices.get(`ctgg/${listds.idGG}`);
-    await quanlyServices.update(`dondathang/${dondathang.id}`, formValues);  
+
+    // const result = await quanlyServices.get(`ctgg/${listds.idGG}`);
+    await quanlyServices.update(`dondathang/${dondathang.id}`, formValues);
     const filter = {
-        params: {
-            limit: filterDDHs.limit,
-            page: filterDDHs.page,
-        }
+      params: {
+        limit: filterDDHs.limit,
+        page: filterDDHs.page,
+      }
     };
     const result = await quanlyServices.get(`dondathangbytt/${dondathang.thangthai}`, filter);
-    dispatch(getDonDatHang(result.dondathang.data)); 
-    
+    dispatch(getDonDatHang(result.dondathang.data));
+
   };
-   
-  const handleCTDDHClick = async ( id) => {
+
+  const handleCTDDHClick = async (id) => {
     setOCTDDH('ctddh-content');
-   const result = await quanlyServices.get(`ctddh/${id}`); 
-   setDSCTDDH(result.CTDDH) 
+    const result = await quanlyServices.get(`ctddh/${id}`);
+    setDSCTDDH(result.CTDDH)
   };
-  const handleCloseClick = async ( ) => {
-    setOCTDDH('ctddh-content displaynone'); 
-   setDSCTDDH([]) 
+  const handleCloseClick = async () => {
+    setOCTDDH('ctddh-content displaynone');
+    setDSCTDDH([])
   };
   return (
     <>
-      <div className='chucnang'> 
+      <div className='chucnang'>
       </div>
-      <div className="dondathang-content"> 
-      <div className={OCTDDH}>
-        <AiFillCloseSquare className="button-close" onClick={handleCloseClick}/>
-          <CTDDH  dsctddh={dsctddh}/> 
-      </div>
+      <div className="dondathang-content">
+        <div className={OCTDDH + " d-flex justify-content-between"}>
+          <CTDDH dsctddh={dsctddh} />
+          <CloseButton className="btn btn-warning" onClick={handleCloseClick} />
+        </div>
         <Container className="feature-card">
           <Table >   <thead>
             <tr>
@@ -95,13 +94,13 @@ function DonDatHang(props) {
             </tr>
           </thead>
             <tbody>
-              {dsdondathang.map((dondathang, index) => ( 
+              {dsdondathang.map((dondathang, index) => (
                 <DataDDH
-                  key={index} 
+                  key={index}
                   dondathang={dondathang}
                   nameTT={nameTT}
                   handleCTDDHClick={handleCTDDHClick}
-                  handleEditClick={handleEditClick} 
+                  handleEditClick={handleEditClick}
                 />
               ))}
 

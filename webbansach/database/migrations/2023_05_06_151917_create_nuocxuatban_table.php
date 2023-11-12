@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('nuocxuatban', function (Blueprint $table) {
             $table->id();
             $table->string('tennuoc',50)->unique(); 
+            $table->timestamps();
         });
     }
 

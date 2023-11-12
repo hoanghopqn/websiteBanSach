@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('email',50)->unique();
             $table->date('ngaysinh');
             $table->integer('thangthai');
+            $table->timestamps();
         });
     }
 
